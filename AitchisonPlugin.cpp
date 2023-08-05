@@ -16,7 +16,7 @@ void AitchisonPlugin::output(std::string file) {
    command += "export PATH=${CONDA_HOME}/bin/:${PATH}; ";
    command += "eval \"$(conda shell.bash hook)\"; ";
    command += "conda activate qiime2-2021.4; ";
-   command += "qiime diversity beta --i-table "+inputfile+" --p-metric hamming --o-distance-matrix "+file+"; unzip -jo "+file+" -d "+PluginManager::prefix()+"; ";
+   command += "qiime diversity beta --i-table "+inputfile+" --p-metric aitchison --o-distance-matrix "+file+"; unzip -jo "+file+" -d "+PluginManager::prefix()+"; ";
    command += "conda deactivate; ";
    command += "export PATH=${OLDPATH}";
  std::cout << command << std::endl;
